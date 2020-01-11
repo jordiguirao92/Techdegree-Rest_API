@@ -3,6 +3,9 @@
 //load modules
 const express = require('express');
 const morgan = require('morgan');
+const sequelize = require('./models').sequelize;
+//const Sequelize = require('sequelize')
+//const sequelize = new Sequelize({dialect:'sqlite', storage:'fsjstd-restapi.db'});
 
 const userRoutes = require('./routes/user');
 const courseRoutes = require('./routes/course');
@@ -35,7 +38,9 @@ app.use('/api/courses', courseRoutes);
 
     // Sync the models
     console.log('Synchronizing the models with the database...');
-    await sequelize.sync({ force: true });
+    await sequelize.sync(); //await sequelize.sync({ force: true });
+    console.log('Synchronize successful');
+
 
   } catch(error) {
     console.error('Error connecting to the database: ', error)

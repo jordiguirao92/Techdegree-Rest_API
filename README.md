@@ -1,6 +1,18 @@
 
 # Full Stack JavaScript Techdegree v2 - REST API Project
 
+ I have created a REST API using Express. The API will provide a way for users to administer a school database containing information about courses: users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database. In addition, the project will require users to create an account and log-in to make changes to the database.
+
+## Getting Started
+
+1. Download the project.
+2. Go to the root project directory.
+3. Run `npm install` in order to install all the requiered dependencies.
+4. Run in the terminal `npm start` and enjoy.
+5. The Library Manager is going to run in http://localhost:5000/.
+6. Also you can use Postman with the `RESTAPI.postman_collection.json` file with the requests that you can use to test and explore your REST API.
+
+
 ## Overview of the Provided Project Files
 
 We've supplied the following files for you to use: 

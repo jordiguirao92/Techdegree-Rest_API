@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
 
   //Define associations. User model has many association between User and Course models. 
   User.associate = (models) => {
-      User.hasMany(models.Course, {foreignKey: 'userdId'});
+      User.hasMany(models.Course, {foreignKey: 'userId'});
   };
 
   
