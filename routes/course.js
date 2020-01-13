@@ -25,7 +25,7 @@ function asyncHandler(cb){
 //GET /api/courses 200 - Returns a list of courses (including the user that owns each course)
 router.get('/', asyncHandler(async(req, res) => {
     //Searching all the courses and adding the User model table. 
-    const courses = await Course.findAll({include:[{model: User}]});
+    const courses = await Course.findAll({attributes:{exclude:['createdAt', 'updatedAt']}, include:[{model: User, attributes:{exclude:['createdAt', 'updatedAt']}}]});
     res.status(200).json(courses);
 }));
 
@@ -33,7 +33,7 @@ router.get('/', asyncHandler(async(req, res) => {
 //GET /api/courses/:id 200 - Returns a the course (including the user that owns the course) for the provided course ID
 router.get('/:id', asyncHandler(async(req, res) => {
     //Searching the id course and adding the User model table. 
-    const courses = await Course.findByPk(req.params.id, {include:[{model: User}]});
+    const courses = await Course.findByPk(req.params.id, {attributes:{exclude:['createdAt', 'updatedAt']} ,include:[{model: User, attributes:{exclude:['createdAt', 'updatedAt']}}]});
     res.status(200).json(courses);
 }));
 

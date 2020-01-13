@@ -31,7 +31,7 @@ function asyncHandler(cb){
 router.get('/', authenticateUser, asyncHandler(async(req, res) => {
     try {
         const user = req.currentUser;
-        res.json({
+        res.status(200).json({
             id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
